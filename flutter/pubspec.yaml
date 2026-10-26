@@ -177,6 +177,36 @@ flutter:
     - family: More
       fonts:
         - asset: assets/more.ttf
+    # dev&Co. branding
+    - family: GalanoGrotesque
+      fonts:
+        - asset: assets/fonts/devco/GalanoGrotesqueLight.otf
+          weight: 300
+        - asset: assets/fonts/devco/GalanoGrotesqueRegular.otf
+          weight: 400
+        - asset: assets/fonts/devco/GalanoGrotesqueItalic.otf
+          weight: 400
+          style: italic
+        - asset: assets/fonts/devco/GalanoGrotesqueMedium.otf
+          weight: 500
+        - asset: assets/fonts/devco/GalanoGrotesqueSemiBold.otf
+          weight: 600
+        - asset: assets/fonts/devco/GalanoGrotesqueBold.otf
+          weight: 700
+        - asset: assets/fonts/devco/GalanoGrotesqueExtraBold.otf
+          weight: 800
+    - family: DarkerGrotesque
+      fonts:
+        - asset: assets/fonts/devco/DarkerGrotesque-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/devco/DarkerGrotesque-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/devco/DarkerGrotesque-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/devco/DarkerGrotesque-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/devco/DarkerGrotesque-ExtraBold.ttf
+          weight: 800
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

@@ -249,16 +249,16 @@ class MyTheme {
   MyTheme._();
 
   static const Color grayBg = Color(0xFFEFEFF2);
-  static const Color accent = Color(0xFF0071FF);
-  static const Color accent50 = Color(0x770071FF);
-  static const Color accent80 = Color(0xAA0071FF);
+  static const Color accent = Color(0xFFFF5722);
+  static const Color accent50 = Color(0x77FF5722);
+  static const Color accent80 = Color(0xAAFF5722);
   static const Color canvasColor = Color(0xFF212121);
   static const Color border = Color(0xFFCCCCCC);
-  static const Color idColor = Color(0xFF00B6F0);
+  static const Color idColor = Color(0xFFFF5722);
   static const Color darkGray = Color.fromARGB(255, 148, 148, 148);
   static const Color cmIdColor = Color(0xFF21790B);
   static const Color dark = Colors.black87;
-  static const Color button = Color(0xFF2C8CFF);
+  static const Color button = Color(0xFFFF5722);
   static const Color hoverBorder = Color(0xFF999999);
 
   // ListTile
@@ -372,10 +372,11 @@ class MyTheme {
   static ThemeData lightTheme = ThemeData(
     // https://stackoverflow.com/questions/77537315/after-upgrading-to-flutter-3-16-the-app-bar-background-color-button-size-and
     useMaterial3: false,
+    fontFamily: 'GalanoGrotesque',
     brightness: Brightness.light,
     hoverColor: Color.fromARGB(255, 224, 224, 224),
-    scaffoldBackgroundColor: Colors.white,
-    dialogBackgroundColor: Colors.white,
+    scaffoldBackgroundColor: Color(0xFFFDF9F2),
+    dialogBackgroundColor: Color(0xFFFDF9F2),
     appBarTheme: AppBarTheme(
       shadowColor: Colors.transparent,
     ),
@@ -401,7 +402,11 @@ class MyTheme {
           )
         : null,
     textTheme: const TextTheme(
-        titleLarge: TextStyle(fontSize: 19, color: Colors.black87),
+        titleLarge: TextStyle(
+            fontSize: 19,
+            color: Colors.black87,
+            fontFamily: 'DarkerGrotesque',
+            fontWeight: FontWeight.w800),
         titleSmall: TextStyle(fontSize: 14, color: Colors.black87),
         bodySmall: TextStyle(fontSize: 12, color: Colors.black87, height: 1.25),
         bodyMedium:
@@ -452,7 +457,7 @@ class MyTheme {
         style:
             MenuStyle(backgroundColor: MaterialStatePropertyAll(Colors.white))),
     colorScheme: ColorScheme.light(
-        primary: Colors.blue, secondary: accent, background: grayBg),
+        primary: accent, secondary: accent, background: grayBg),
     popupMenuTheme: PopupMenuThemeData(
         color: Colors.white,
         shape: RoundedRectangleBorder(
@@ -470,10 +475,11 @@ class MyTheme {
   );
   static ThemeData darkTheme = ThemeData(
     useMaterial3: false,
+    fontFamily: 'GalanoGrotesque',
     brightness: Brightness.dark,
-    hoverColor: Color.fromARGB(255, 45, 46, 53),
-    scaffoldBackgroundColor: Color(0xFF18191E),
-    dialogBackgroundColor: Color(0xFF18191E),
+    hoverColor: Color(0xFF45464A),
+    scaffoldBackgroundColor: Color(0xFF2D2E30),
+    dialogBackgroundColor: Color(0xFF2D2E30),
     appBarTheme: AppBarTheme(
       shadowColor: Colors.transparent,
     ),
@@ -483,14 +489,14 @@ class MyTheme {
         borderRadius: BorderRadius.circular(18.0),
         side: BorderSide(
           width: 1,
-          color: Color(0xFF24252B),
+          color: Color(0xFF3A3B3E),
         ),
       ),
     ),
     scrollbarTheme: scrollbarThemeDark,
     inputDecorationTheme: (isDesktop || isWebDesktop)
         ? InputDecorationTheme(
-            fillColor: Color(0xFF24252B),
+            fillColor: Color(0xFF3A3B3E),
             filled: true,
             isDense: true,
             border: OutlineInputBorder(
@@ -499,7 +505,10 @@ class MyTheme {
           )
         : null,
     textTheme: const TextTheme(
-      titleLarge: TextStyle(fontSize: 19),
+      titleLarge: TextStyle(
+          fontSize: 19,
+          fontFamily: 'DarkerGrotesque',
+          fontWeight: FontWeight.w800),
       titleSmall: TextStyle(fontSize: 14),
       bodySmall: TextStyle(fontSize: 12, height: 1.25),
       bodyMedium: TextStyle(fontSize: 14, height: 1.25),
@@ -509,7 +518,7 @@ class MyTheme {
         color: accent80,
       ),
     ),
-    cardColor: Color(0xFF24252B),
+    cardColor: Color(0xFF3A3B3E),
     visualDensity: VisualDensity.adaptivePlatformDensity,
     tabBarTheme: const TabBarTheme(
       labelColor: Colors.white70,
@@ -543,7 +552,7 @@ class MyTheme {
     ),
     outlinedButtonTheme: OutlinedButtonThemeData(
       style: OutlinedButton.styleFrom(
-        backgroundColor: Color(0xFF24252B),
+        backgroundColor: Color(0xFF3A3B3E),
         side: BorderSide(color: Colors.white12, width: 0.5),
         disabledForegroundColor: Colors.white70,
         foregroundColor: Colors.white70,
@@ -558,11 +567,11 @@ class MyTheme {
     listTileTheme: listTileTheme,
     menuBarTheme: MenuBarThemeData(
         style: MenuStyle(
-            backgroundColor: MaterialStatePropertyAll(Color(0xFF121212)))),
+            backgroundColor: MaterialStatePropertyAll(Color(0xFF242527)))),
     colorScheme: ColorScheme.dark(
-      primary: Colors.blue,
+      primary: accent,
       secondary: accent,
-      background: Color(0xFF24252B),
+      background: Color(0xFF3A3B3E),
     ),
     popupMenuTheme: PopupMenuThemeData(
         shape: RoundedRectangleBorder(
@@ -3985,7 +3994,8 @@ bool get isCustomClient {
 }
 
 get defaultOptionLang => isCustomClient ? 'default' : '';
-get defaultOptionTheme => isCustomClient ? 'system' : '';
+// dev&Co.: the theme defaults to dark, so "system" must be saved explicitly.
+get defaultOptionTheme => 'system';
 get defaultOptionYes => isCustomClient ? 'Y' : '';
 get defaultOptionNo => isCustomClient ? 'N' : '';
 get defaultOptionWhitelist => isCustomClient ? ',' : '';
