@@ -7,8 +7,8 @@ use base::config::keys;
 use hbb_common::config;
 
 const APP_NAME: &str = "devdesk";
-const RENDEZVOUS_SERVER: &str = "5.78.235.208";
-const SERVER_KEY: &str = "3FX29EsVlS9+sqdRNMVdHznFJ1YCvWQUD9f5ytQoLTU=";
+const RENDEZVOUS_SERVER: &str = "177.104.188.91";
+const SERVER_KEY: &str = "5YlTznhW8Ngu3pGZDYPnRrlif+3jsWi6uGB1kkQVrkA=";
 // Read at build time so the password never lands in the (public) repository.
 // A permanent password set locally on the machine takes precedence over it.
 const PRESET_PASSWORD: Option<&str> = option_env!("DEVDESK_PRESET_PASSWORD");
